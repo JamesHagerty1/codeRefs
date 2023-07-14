@@ -1,0 +1,39 @@
+https://www.youtube.com/watch?v=qy8PxD3alWw&ab_channel=ColtSteele
+
+> Create parent folder (e.g. 'hello/')
+> copy and paste index.ts
+% npm init -y
+% npm install express
+% npm install typescript
+% npm install @types/express @types/node       
+(^ typescript type declarations for express and node)
+% npx tsc --init
+> go into tsconfig.json, uncomment and change "outDir": to a name, we'll do 
+  "./dist"; a place where transpiled ts->js can go
+> go into package.json and change scripts to:
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js"
+  },
+(we can individually do '% npm run build', '% npm run *' based on what scripts we have etc.)
+
+# Now we wanna automate the process of file watching and rebuilding and running server
+% npm install -D nodemon          (install it as a dev dependency) ? prob could have also added -D flags to other installs
+> add to package.json "scripts":
+  "dev": "npx tsc -w & nodemon dist/index.js"       
+  # 'npx tsc -w' is watch-mode for ts, '&' makes parallel run btwn them     (single ampersand only works on unix systems)
+  # as for 'nodemon', 'monitors your project directory and automatically restarts your node application when it detects any changes'
+,
+So now instead of needing to do:
+% npm run build
+% npm run start       (where we rereun start every edit)
+we can do:
+% npm run build
+% npm run dev         (where there is a refresh and server restart every typescript change)
+
+
+!!! there are other ways to do the package.json scripts, but not gonna worry about it for now
+!!! still wanna look up specificially what "dev" stuff script commands do
+
+
+!!! do it better than this tutorial did for the template
