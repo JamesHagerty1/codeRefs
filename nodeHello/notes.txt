@@ -1,0 +1,1 @@
+Functions ending in 'sync' are blocking
