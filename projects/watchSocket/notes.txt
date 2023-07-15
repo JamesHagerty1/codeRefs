@@ -1,0 +1,25 @@
+# Fake smartwatch socket stream
+# Will be an example integrating typescript, express, socket.io
+
+
+
+SETUP:
+
+% npm init -y                                           start a package.json
+
+% npm install -D express                    
+% npm install -D typescript
+% npm install -D @types/express @types/node
+% npm install -D tsx                                    used to do '% npx tsx index.ts', the way code is run        
+
+% npm install socket.io                                 provides its own types!
+
+
+
+> index.ts is pretty generic, relied on boilerplate ts+express file and
+  https://medium.com/kocfinanstech/socket-io-with-node-js-express-5cc75aa67cae
+
+
+
+
+
